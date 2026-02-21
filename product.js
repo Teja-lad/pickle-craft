@@ -23,7 +23,7 @@ const PRODUCTS = [
     rating: 4.8,
     ratingCount: 248,
     badge: "bestseller",
-    image:  "images/mango-pickle.jpg" ,
+    image:  "images/Mango-pickle.jpg" ,
     popular: 248
   },
   {
@@ -520,4 +520,5 @@ document.addEventListener('DOMContentLoaded', () => {
   createDrawer();
   updateCartCount();
   renderProducts();
+
 });
