@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - PickleCraft</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🥒</span>
+                <span class="logo-text">PickleCraft</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="products.html" class="nav-link">Pickles</a></li>
+                <li><a href="order.html" class="nav-link">Order Now</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="login.html" class="login-btn active">Login</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login/Register Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Left Side - Welcome Panel -->
+            <div class="welcome-panel" id="welcomePanel">
+                <div class="welcome-content">
+                    <div class="brand-logo">
+                        <span class="brand-icon">🥒</span>
+                        <h1>PickleCraft</h1>
+                    </div>
+                    <h2 class="welcome-title">Welcome Back!</h2>
+                    <p class="welcome-text">
+                        Login to access your account and continue your pickle journey with us.
+                    </p>
+                    <div class="welcome-illustration">
+                        <span class="pickle-emoji">🫙</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Forms -->
+            <div class="forms-panel">
+                <!-- Login Form -->
+                <div class="form-container active" id="loginForm">
+                    <div class="form-header">
+                        <h2>Login to Your Account</h2>
+                        <p>Enter your credentials to access your account</p>
+                    </div>
+
+                    <form id="loginFormElement" class="auth-form">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">📧</span>
+                                <input 
+                                    type="email" 
+                                    id="loginEmail" 
+                                    name="email" 
+                                    required 
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">🔒</span>
+                                <input 
+                                    type="password" 
+                                    id="loginPassword" 
+                                    name="password" 
+                                    required 
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                >
+                                <span class="toggle-password" data-target="loginPassword">👁️</span>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Login</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+
+                        <div class="form-footer">
+                            <p>Don't have an account? 
+                                <a href="#" class="toggle-form-link" data-target="register">Register here</a>
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Social Login -->
+                    <div class="social-login">
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button class="social-btn google">
+                                <span class="social-icon">🔴</span>
+                                Google
+                            </button>
+                            <button class="social-btn facebook">
+                                <span class="social-icon">📘</span>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Form -->
+                <div class="form-container" id="registerForm">
+                    <div class="form-header">
+                        <h2>Create New Account</h2>
+                        <p>Join us and start your pickle journey today!</p>
+                    </div>
+
+                    <form id="registerFormElement" class="auth-form">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">👤</span>
+                                <input 
+                                    type="text" 
+                                    id="registerName" 
+                                    name="name" 
+                                    required 
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerEmail">Email Address</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">📧</span>
+                                <input 
+                                    type="email" 
+                                    id="registerEmail" 
+                                    name="email" 
+                                    required 
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerPhone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">📱</span>
+                                <input 
+                                    type="tel" 
+                                    id="registerPhone" 
+                                    name="phone" 
+                                    required 
+                                    placeholder="+91 12345 67890"
+                                    autocomplete="tel"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">🔒</span>
+                                <input 
+                                    type="password" 
+                                    id="registerPassword" 
+                                    name="password" 
+                                    required 
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                >
+                                <span class="toggle-password" data-target="registerPassword">👁️</span>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <span class="strength-text" id="strengthText">Weak</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-with-icon">
+                                <span class="input-icon">🔒</span>
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    required 
+                                    placeholder="Re-enter your password"
+                                    autocomplete="new-password"
+                                >
+                                <span class="toggle-password" data-target="confirmPassword">👁️</span>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span>I agree to the <a href="#" class="link">Terms & Conditions</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Create Account</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+
+                        <div class="form-footer">
+                            <p>Already have an account? 
+                                <a href="#" class="toggle-form-link" data-target="login">Login here</a>
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Social Login -->
+                    <div class="social-login">
+                        <div class="divider">
+                            <span>Or register with</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button class="social-btn google">
+                                <span class="social-icon">🔴</span>
+                                Google
+                            </button>
+                            <button class="social-btn facebook">
+                                <span class="social-icon">📘</span>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="success-icon">✅</div>
+            <h2 id="modalTitle">Success!</h2>
+            <p id="modalMessage">You have successfully logged in.</p>
+            <button class="modal-btn" id="modalBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

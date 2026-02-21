@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - PickleCraft</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🥒</span>
+                <span class="logo-text">PickleCraft</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="products.html" class="nav-link">Pickles</a></li>
+                <li><a href="order.html" class="nav-link active">Order Now</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Place Your Order</h1>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="order-container">
+                <!-- Order Form -->
+                <div class="order-form-container">
+                    <h2 class="section-title">Order Details</h2>
+                    
+                    <form id="orderForm" class="order-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Personal Information</h3>
+                            
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+91 12345 67890">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Address -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Delivery Address</h3>
+                            
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <textarea id="address" name="address" rows="3" required placeholder="House/Flat No., Street Name"></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required placeholder="City">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" name="state" required placeholder="State">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pincode">PIN Code *</label>
+                                    <input type="text" id="pincode" name="pincode" required placeholder="123456" maxlength="6">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="landmark">Landmark</label>
+                                    <input type="text" id="landmark" name="landmark" placeholder="Near...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Select Products</h3>
+                            <div id="productSelection" class="product-selection">
+                                <!-- Products will be loaded here dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Payment Method</h3>
+                            
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cod" checked>
+                                    <div class="payment-card">
+                                        <span class="payment-icon">💵</span>
+                                        <div>
+                                            <strong>Cash on Delivery</strong>
+                                            <p>Pay when you receive</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="upi">
+                                    <div class="payment-card">
+                                        <span class="payment-icon">📱</span>
+                                        <div>
+                                            <strong>UPI Payment</strong>
+                                            <p>Google Pay, PhonePe, Paytm</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card">
+                                    <div class="payment-card">
+                                        <span class="payment-icon">💳</span>
+                                        <div>
+                                            <strong>Card Payment</strong>
+                                            <p>Credit / Debit Card</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="netbanking">
+                                    <div class="payment-card">
+                                        <span class="payment-icon">🏦</span>
+                                        <div>
+                                            <strong>Net Banking</strong>
+                                            <p>All major banks</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Special Instructions -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Special Instructions (Optional)</h3>
+                            <div class="form-group">
+                                <textarea id="instructions" name="instructions" rows="3" placeholder="Any special delivery instructions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Place Order</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2 class="section-title">Order Summary</h2>
+                    
+                    <div class="summary-items" id="summaryItems">
+                        <p class="empty-message">No items selected</p>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <span id="deliveryFee">₹5.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tax (5%):</span>
+                        <span id="tax">₹0.00</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">₹5.00</span>
+                    </div>
+
+                    <div class="promo-section">
+                        <input type="text" id="promoCode" placeholder="Enter promo code">
+                        <button type="button" id="applyPromo" class="apply-btn">Apply</button>
+                    </div>
+
+                    <div class="delivery-info">
+                        <div class="info-item">
+                            <span class="info-icon">🚚</span>
+                            <div>
+                                <strong>Free Delivery</strong>
+                                <p>On orders above ₹50</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <div>
+                                <strong>Delivery Time</strong>
+                                <p>3-5 business days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PickleCraft</h3>
+                    <p>Preserving tradition, one jar at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="order.html">Order</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@picklecraft.com</p>
+                    <p>Phone: +91 123456789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PickleCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content success-modal">
+            <div class="success-icon">✅</div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your order. We'll send you a confirmation email shortly.</p>
+            <p class="order-id">Order ID: <strong id="orderId"></strong></p>
+            <button class="modal-btn" onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>
